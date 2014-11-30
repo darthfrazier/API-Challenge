@@ -19,6 +19,6 @@ The more stages you complete in the challenge, the more you’ll stick out. For 
 
 
 I have completed the Java implementation of the API challenge, and I will soon upload some html files that will contain the javascript implementation.
-I hope to also do it in python, but the will likely be after the december 1st due date.
+I hope to also do it in python, but that will likely be after the december 1st due date.
 
 Thanks!
