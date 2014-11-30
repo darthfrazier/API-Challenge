@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="lib" path="src/lib/java-json.jar"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Darthfrazier/Documents/Programming/workspace/APIChallenge/src/lib/joda-time-2.5.jar"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="/Users/Darthfrazier/Documents/Programming/workspace/APIChallenge/src/lib/date4j.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
