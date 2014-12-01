@@ -21,4 +21,9 @@ The more stages you complete in the challenge, the more you’ll stick out. For 
 I have completed the Java implementation of the API challenge, and I will soon upload some html files that will contain the javascript implementation.
 I hope to also do it in python, but that will likely be after the december 1st due date.
 
+Update: Javascript implementation is done.  It could be done more efficiently, but I think it was a good representation
+of my current javascript skills.  I have it hosted on google drive, but the connections are timing out, so Ill have to fix that.
+
+https://e458261ea7a5d85b8f939c2a4c7c07c3a612e672.googledrive.com/host/0B63tV_0b1WStSGJfUWhpYzNNZW8/
+
 Thanks!
