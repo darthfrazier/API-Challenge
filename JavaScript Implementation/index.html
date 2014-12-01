@@ -92,7 +92,7 @@
 					</form>
 				</p>
 				<footer>
-					<a href="#challenge2" class="button style2 scrolly">Run Challenge Three</a>
+					<input type="button" id="c3"  class="button style2 scrolly scrolly-centered" value="Run Challenge Three">
 				</footer>
 			</section>
 			<section id="footer">
@@ -112,7 +112,7 @@
 					</form>
 				</p>
 				<footer>
-					<a href="#challenge2" class="button style2 scrolly">Run Challenge Four</a>
+					<input type="button" id="c4"  class="button style2 scrolly scrolly-centered" value="Run Challenge Four">
 				</footer>
 			</section>		
 				
@@ -230,6 +230,56 @@
                
             });
         });  
+        
+        $(c3).click(function() {
+			console.log(token);
+			$.ajax({
+                url: "http://challenge.code2040.org/api/prefix",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'text',
+                data: JSON.stringify(jsontoken)
+            }).done(function (data) {
+                
+                obj = JSON.parse(data);
+               	prefix = obj.result.prefix;
+                array = _(obj.result.array).toArray();
+                var noprefix = [];
+                document.getElementById('c3input').value = prefix;
+                for (var i = 0; i < array.length; i++) {
+                	if(array[i].lastIndexOf(prefix, 0) === -1) {
+                		noprefix.push(array[i]);
+                	}
+                }
+                document.getElementById('c3output').value = noprefix.length;
+                submit3(noprefix);
+               
+            });
+        });  
+        
+        $(c4).click(function() {
+			console.log(token);
+			$.ajax({
+                url: "http://challenge.code2040.org/api/time",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'text',
+                data: JSON.stringify(jsontoken)
+            }).done(function (data) {
+                
+                obj = JSON.parse(data);
+               	datestamp = obj.result.datestamp;
+               	seconds = obj.result.interval;
+                document.getElementById('c4input').value = datestamp;
+                dp = new Date(datestamp);
+                newseconds = dp.getSeconds() + seconds;
+                dp.setSeconds(newseconds);
+                newdatestamp = dp.toISOString();
+                document.getElementById('c4output').value = newdatestamp;
+                submit4(newdatestamp);
+               
+            });
+        });  
          function submit1 (string) {  
             $.ajax({
             	url:"http://challenge.code2040.org/api/validatestring",
@@ -258,24 +308,24 @@
           
           function submit3 (array) {  
             $.ajax({
-            	url:"http://challenge.code2040.org/api/validatestring",
+            	url:"http://challenge.code2040.org/api/validateprefix",
             	type: 'POST',
             	crossDomain: true,
             	dataType: 'text',
-            	data: JSON.stringify({"token":token,"string":string})
+            	data: JSON.stringify({"token":token,"array":array})
             }).done(function (data) {
             	console.log(data);
             });
             
           }
           
-          function submit4 (string) {  
+          function submit4 (newdatestamp) {  
             $.ajax({
-            	url:"http://challenge.code2040.org/api/validatestring",
+            	url:"http://challenge.code2040.org/api/validatetime",
             	type: 'POST',
             	crossDomain: true,
             	dataType: 'text',
-            	data: JSON.stringify({"token":token,"string":string})
+            	data: JSON.stringify({"token":token,"datestamp":newdatestamp})
             }).done(function (data) {
             	console.log(data);
             });
