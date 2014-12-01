@@ -4,6 +4,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<!-- This is a template by one of my favorite html5 template creators, HTML5 UP-->
 <html>
 	<head>
 		<title>Overflow by HTML5 UP</title>
@@ -48,6 +49,7 @@
 					<h2>Reverse a string</h2>
 				</header>
 				<p>
+					<!--Turns out somethings as simple as posting to a text field held me back for a few hours-->
 					<form>
 					Input String <input type="text" id="c1input"/>
 					Reverse String <input type="text" id="c1output"/>
@@ -157,6 +159,8 @@
 				</ul>
 			</div>
 		</section>
+		<!--Ahh, the good ol' javascript.  I know that there are pretty massive optimization flaws in this script (Four submit functions...)
+		but I did my best given my time frame and my current skills-->
 		<script>
 			var credentials = {
 			"email" : "kmjf@princeton.edu",
@@ -165,7 +169,8 @@
 			var token;
 			var jsontoken;
 			var reversed;
-				
+		/*once this function was done, most of the rest of the script was a matter of copy and paste and changing a few variables; this was the same
+		in the Java implementation*/
 		$(document).ready(function(){
 			
 			$.ajax({
@@ -256,7 +261,8 @@
                
             });
         });  
-        
+        /*I stil get a wierd problem with this function.  About 75% of the time it will work just fine.  Sometimes, though, I ll get a 400 bad request error on the 
+        submit function.  Not quite sure why, but it might have something to do with javascripts date function.*/
         $(c4).click(function() {
 			console.log(token);
 			$.ajax({
@@ -279,7 +285,9 @@
                 submit4(newdatestamp);
                
             });
-        });  
+        });
+        
+        /*Like I said, four submit functions.  There has to be a better way to do this*/
          function submit1 (string) {  
             $.ajax({
             	url:"http://challenge.code2040.org/api/validatestring",
