@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<!--
+	Overflow by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Overflow by HTML5 UP</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/jquery.poptrox.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="js/underscore.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<section id="header">
+				<header>
+					<h1>CODE2040 API Challenge</h1>
+					<p>Karl Frazier</p>
+						<form>
+						<p>token <input type="text" id="token"/></p>
+						</form>
+				</header>
+				<footer>
+					<a href="#challenge1" class="button style2 scrolly scrolly-centered">Proceed to the First Challenge</a>
+				</footer>
+				
+			<div class="container">
+			</div>
+			</section>
+		
+		<!-- Challenge 1 -->
+			<section id="challenge1">
+				<header>
+					<h2>Reverse a string</h2>
+				</header>
+				<p>
+					<form>
+					Input String <input type="text" id="c1input"/>
+					Reverse String <input type="text" id="c1output"/>
+					</form>
+				</p>
+				<footer>
+					<input type="button" id="c1"  class="button style2 scrolly scrolly-centered" value="Run Challenge one">
+				</footer>
+			</section>
+			<section id="footer">
+				
+			</section>
+		<!-- Challenge 2 -->
+			<section id="challenge2">
+				<header>
+					<h2>Needle in a haystack</h2>
+				</header>
+				<p>
+					<form>
+					Needle <input type="text" id="c2input"/>
+					<p style="color:red">Is located at</p>
+					Index <input type="text" id="c2output"/>
+					</form>
+				</p>
+				<footer>
+					<input type="button" id="c2"  class="button style2 scrolly scrolly-centered" value="Run Challenge Two">
+				</footer>
+			</section>
+			<section id="footer">
+				
+			</section>
+		<!-- Challenge 3 -->
+			<section id="challenge3">
+				<header>
+					<h2>Prefix</h2>
+				</header>
+				<p><form>
+					Prefix <input type="text" id="c3input"/>
+					<p style="color:red">Was Found</p>
+					Index <input type="text" id="c3output"/>
+					<p style="color:red">Times</p>
+					</form>
+				</p>
+				<footer>
+					<a href="#challenge2" class="button style2 scrolly">Run Challenge Three</a>
+				</footer>
+			</section>
+			<section id="footer">
+				
+			</section>
+		<!-- Challenge 4 -->
+			<section id="challenge4">
+				<header>
+					<h2>The dating game</h2>
+				</header>
+				<p>
+					<form>
+					Orginal Date <input type="text" id="c4input"/>
+					
+					New Date <input type="text" id="c4output"/>
+					
+					</form>
+				</p>
+				<footer>
+					<a href="#challenge2" class="button style2 scrolly">Run Challenge Four</a>
+				</footer>
+			</section>		
+				
+					<h2 style="text-align: center; color:white">Check out some of my other projects!</h2>
+			
+		<!-- Feature 1 -->
+			<article id="first" class="container box style1 right">
+				<a href="http://nextbeatapp.com/" class="image centered"><img src="images/nextbeat.png" alt="" /></a>
+				<div class="inner">
+					<header>
+						<h2>NextBeat
+						</h2>
+					</header>
+					<p>A new way of interacting with the DJ.  Use our ios app and website to create location based events, and suggest songs. Soon to use Spotify API</p>
+				</div>
+			</article>
+		
+		<!-- Feature 2 -->
+			<article class="container box style1 left">
+				<a href="http://thedormproject.com/index.php" class="image centered"><img style="margin-right: 50em" src="images/thedormproject.png" alt="" /></a>
+				<div class="inner">
+					<header>
+						<h2>The Dorm Project</h2>
+					</header>
+					<p>An incomplete, but promising social network experiment.  Chat randomly with other college students.  Uses WebRTC.</p>
+				</div>
+			</article>
+		
+		
+		
+		
+		<section id="footer">
+			<ul class="icons">
+				<li><a href="https://twitter.com/Darth_Frazier" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+				<li><a href="https://www.facebook.com/karl.frazier.7" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+				<li><a href="https://plus.google.com/u/0/113994253773673643914/posts" class="icon fa-google-plus"><span class="label">Google+</span></a></li>
+				<li><a href="https://www.linkedin.com/pub/karl-frazier/a8/661/5b1/" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			</ul>
+			<div class="copyright">
+				<ul class="menu">
+					<li>&copy; Karl Frazier. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</section>
+		<script>
+			var credentials = {
+			"email" : "kmjf@princeton.edu",
+			"github" : "https://github.com/darthfrazier"
+			}
+			var token;
+			var jsontoken;
+			var reversed;
+				
+		$(document).ready(function(){
+			
+			$.ajax({
+                url: "http://challenge.code2040.org/api/register",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'text',
+                data: JSON.stringify(credentials)
+            }).done(function (data) {
+                
+                obj = JSON.parse(data);
+                token = obj.result;
+                document.getElementById('token').value = token;
+                jsontoken = {
+				"token": token
+					};
+               
+            }); 
+		});
+			
+			
+			
+			
+		$(c1).click(function() {
+			console.log(token);
+			$.ajax({
+                url: "http://challenge.code2040.org/api/getstring",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'text',
+                data: JSON.stringify(jsontoken)
+            }).done(function (data) {
+                
+                obj = JSON.parse(data);
+                string = obj.result;
+                document.getElementById('c1input').value = string;
+                reversed = string.split("").reverse().join("");
+                document.getElementById('c1output').value = reversed;
+                submit1(reversed);
+               
+            });
+        });
+          
+          
+        $(c2).click(function() {
+			console.log(token);
+			$.ajax({
+                url: "http://challenge.code2040.org/api/haystack",
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'text',
+                data: JSON.stringify(jsontoken)
+            }).done(function (data) {
+                
+                obj = JSON.parse(data);
+                needle = obj.result.needle;
+                haystack = _(obj.result.haystack).toArray();
+                document.getElementById('c2input').value = needle;
+                index = haystack.indexOf(needle);
+                document.getElementById('c2output').value = index;
+                submit2(index);
+               
+            });
+        });  
+         function submit1 (string) {  
+            $.ajax({
+            	url:"http://challenge.code2040.org/api/validatestring",
+            	type: 'POST',
+            	crossDomain: true,
+            	dataType: 'text',
+            	data: JSON.stringify({"token":token,"string":string})
+            }).done(function (data) {
+            	console.log(data);
+            });
+            
+          }
+         
+         function submit2 (index) {  
+            $.ajax({
+            	url:"http://challenge.code2040.org/api/validateneedle",
+            	type: 'POST',
+            	crossDomain: true,
+            	dataType: 'text',
+            	data: JSON.stringify({"token":token,"needle":index})
+            }).done(function (data) {
+            	console.log(data);
+            });
+            
+          }
+          
+          function submit3 (array) {  
+            $.ajax({
+            	url:"http://challenge.code2040.org/api/validatestring",
+            	type: 'POST',
+            	crossDomain: true,
+            	dataType: 'text',
+            	data: JSON.stringify({"token":token,"string":string})
+            }).done(function (data) {
+            	console.log(data);
+            });
+            
+          }
+          
+          function submit4 (string) {  
+            $.ajax({
+            	url:"http://challenge.code2040.org/api/validatestring",
+            	type: 'POST',
+            	crossDomain: true,
+            	dataType: 'text',
+            	data: JSON.stringify({"token":token,"string":string})
+            }).done(function (data) {
+            	console.log(data);
+            });
+            
+          }
+         
+		
+			
+		</script>
+		
+	</body>
+</html>
