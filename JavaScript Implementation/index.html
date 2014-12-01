@@ -4,7 +4,6 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<!-- This is a template by one of my favorite html5 template creators, HTML5 UP-->
 <html>
 	<head>
 		<title>Overflow by HTML5 UP</title>
@@ -49,7 +48,6 @@
 					<h2>Reverse a string</h2>
 				</header>
 				<p>
-					<!--Turns out somethings as simple as posting to a text field held me back for a few hours-->
 					<form>
 					Input String <input type="text" id="c1input"/>
 					Reverse String <input type="text" id="c1output"/>
@@ -159,190 +157,7 @@
 				</ul>
 			</div>
 		</section>
-		<!--Ahh, the good ol' javascript.  I know that there are pretty massive optimization flaws in this script (Four submit functions...)
-		but I did my best given my time frame and my current skills-->
-		<script>
-			var credentials = {
-			"email" : "kmjf@princeton.edu",
-			"github" : "https://github.com/darthfrazier"
-			}
-			var token;
-			var jsontoken;
-			var reversed;
-		/*once this function was done, most of the rest of the script was a matter of copy and paste and changing a few variables; this was the same
-		in the Java implementation*/
-		$(document).ready(function(){
-			
-			$.ajax({
-                url: "http://challenge.code2040.org/api/register",
-                type: 'POST',
-                crossDomain: true,
-                dataType: 'text',
-                data: JSON.stringify(credentials)
-            }).done(function (data) {
-                
-                obj = JSON.parse(data);
-                token = obj.result;
-                document.getElementById('token').value = token;
-                jsontoken = {
-				"token": token
-					};
-               
-            }); 
-		});
-			
-			
-			
-			
-		$(c1).click(function() {
-			console.log(token);
-			$.ajax({
-                url: "http://challenge.code2040.org/api/getstring",
-                type: 'POST',
-                crossDomain: true,
-                dataType: 'text',
-                data: JSON.stringify(jsontoken)
-            }).done(function (data) {
-                
-                obj = JSON.parse(data);
-                string = obj.result;
-                document.getElementById('c1input').value = string;
-                reversed = string.split("").reverse().join("");
-                document.getElementById('c1output').value = reversed;
-                submit1(reversed);
-               
-            });
-        });
-          
-          
-        $(c2).click(function() {
-			console.log(token);
-			$.ajax({
-                url: "http://challenge.code2040.org/api/haystack",
-                type: 'POST',
-                crossDomain: true,
-                dataType: 'text',
-                data: JSON.stringify(jsontoken)
-            }).done(function (data) {
-                
-                obj = JSON.parse(data);
-                needle = obj.result.needle;
-                haystack = _(obj.result.haystack).toArray();
-                document.getElementById('c2input').value = needle;
-                index = haystack.indexOf(needle);
-                document.getElementById('c2output').value = index;
-                submit2(index);
-               
-            });
-        });  
-        
-        $(c3).click(function() {
-			console.log(token);
-			$.ajax({
-                url: "http://challenge.code2040.org/api/prefix",
-                type: 'POST',
-                crossDomain: true,
-                dataType: 'text',
-                data: JSON.stringify(jsontoken)
-            }).done(function (data) {
-                
-                obj = JSON.parse(data);
-               	prefix = obj.result.prefix;
-                array = _(obj.result.array).toArray();
-                var noprefix = [];
-                document.getElementById('c3input').value = prefix;
-                for (var i = 0; i < array.length; i++) {
-                	if(array[i].lastIndexOf(prefix, 0) === -1) {
-                		noprefix.push(array[i]);
-                	}
-                }
-                document.getElementById('c3output').value = noprefix.length;
-                submit3(noprefix);
-               
-            });
-        });  
-        /*I stil get a wierd problem with this function.  About 75% of the time it will work just fine.  Sometimes, though, I ll get a 400 bad request error on the 
-        submit function.  Not quite sure why, but it might have something to do with javascripts date function.*/
-        $(c4).click(function() {
-			console.log(token);
-			$.ajax({
-                url: "http://challenge.code2040.org/api/time",
-                type: 'POST',
-                crossDomain: true,
-                dataType: 'text',
-                data: JSON.stringify(jsontoken)
-            }).done(function (data) {
-                
-                obj = JSON.parse(data);
-               	datestamp = obj.result.datestamp;
-               	seconds = obj.result.interval;
-                document.getElementById('c4input').value = datestamp;
-                dp = new Date(datestamp);
-                newseconds = dp.getSeconds() + seconds;
-                dp.setSeconds(newseconds);
-                newdatestamp = dp.toISOString();
-                document.getElementById('c4output').value = newdatestamp;
-                submit4(newdatestamp);
-               
-            });
-        });
-        
-        /*Like I said, four submit functions.  There has to be a better way to do this*/
-         function submit1 (string) {  
-            $.ajax({
-            	url:"http://challenge.code2040.org/api/validatestring",
-            	type: 'POST',
-            	crossDomain: true,
-            	dataType: 'text',
-            	data: JSON.stringify({"token":token,"string":string})
-            }).done(function (data) {
-            	console.log(data);
-            });
-            
-          }
-         
-         function submit2 (index) {  
-            $.ajax({
-            	url:"http://challenge.code2040.org/api/validateneedle",
-            	type: 'POST',
-            	crossDomain: true,
-            	dataType: 'text',
-            	data: JSON.stringify({"token":token,"needle":index})
-            }).done(function (data) {
-            	console.log(data);
-            });
-            
-          }
-          
-          function submit3 (array) {  
-            $.ajax({
-            	url:"http://challenge.code2040.org/api/validateprefix",
-            	type: 'POST',
-            	crossDomain: true,
-            	dataType: 'text',
-            	data: JSON.stringify({"token":token,"array":array})
-            }).done(function (data) {
-            	console.log(data);
-            });
-            
-          }
-          
-          function submit4 (newdatestamp) {  
-            $.ajax({
-            	url:"http://challenge.code2040.org/api/validatetime",
-            	type: 'POST',
-            	crossDomain: true,
-            	dataType: 'text',
-            	data: JSON.stringify({"token":token,"datestamp":newdatestamp})
-            }).done(function (data) {
-            	console.log(data);
-            });
-            
-          }
-         
-		
-			
-		</script>
+		<script src="js/challenges.js"></script>
 		
 	</body>
 </html>
