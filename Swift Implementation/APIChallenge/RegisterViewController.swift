@@ -13,7 +13,7 @@ import JSONJoy
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var tokenfield: UITextField!
-    
+    var ctoken: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         struct Token : JSONJoy {
@@ -22,11 +22,11 @@ class RegisterViewController: UIViewController {
                 
             }
             init(_ decoder: JSONDecoder) {
-                token = decoder["status"].string
+                token = decoder["token"].string
             }
         }
         var request = HTTPTask()
-        let params: Dictionary<String,AnyObject> = ["email": "kmjf@princeton.edu", "github":"https://github.com/darthfrazier"]
+        let params: Dictionary<String,String> = ["email": "kmjf@princeton.edu", "github":"https://github.com/darthfrazier/API-Challenge"]
         request.requestSerializer = JSONRequestSerializer()
         request.responseSerializer = JSONResponseSerializer()
         request.POST("http://challenge.code2040.org/api/register", parameters: params, success: {(response: HTTPResponse) in
@@ -34,6 +34,7 @@ class RegisterViewController: UIViewController {
                 let resp = Token(JSONDecoder(response.responseObject!))
                 if let token = resp.token {
                 println("Token is: \(token)")
+                ctoken = token
                 self.tokenfield.text = token
                 }
             }
@@ -71,7 +72,7 @@ class RegisterViewController: UIViewController {
     }
         
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -79,6 +80,9 @@ class RegisterViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    if (segue.identifier == "back") {
+        var challenges = segue!.destinationViewController as DetailViewController;
+        challenges.toPass = ctoken
+    }
 
 }
