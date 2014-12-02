@@ -7,7 +7,6 @@
         <!--Navigation Controller-->
         <scene sceneID="081-1b-H7V">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kpN-Ek-cak" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController toolbarHidden="NO" id="X1N-dO-Qhu" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Xrq-S1-177">
@@ -21,6 +20,7 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sz1-ak-naX"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kpN-Ek-cak" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1107.5" y="394.5"/>
         </scene>
@@ -80,7 +80,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ma0-fg-Cug" kind="show" id="wQG-4Y-wbh"/>
+                                    <segue destination="jSq-S6-2SY" kind="show" identifier="back" id="5ia-Ww-8zo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,23 +100,57 @@
             <point key="canvasLocation" x="-379.5" y="394.5"/>
         </scene>
         <!--Challengeone View Controller-->
-        <scene sceneID="kJG-jh-MOe">
+        <scene sceneID="HnM-u3-21u">
             <objects>
-                <viewController id="Ma0-fg-Cug" customClass="challengeoneViewController" customModule="APIChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jSq-S6-2SY" customClass="challengeoneViewController" customModule="APIChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aDz-2C-1u9"/>
-                        <viewControllerLayoutGuide type="bottom" id="4kG-oP-5Sn"/>
+                        <viewControllerLayoutGuide type="top" id="JCO-Oe-npG"/>
+                        <viewControllerLayoutGuide type="bottom" id="p9e-7u-bTb"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9sw-zb-uwu" customClass="challengeone">
+                    <view key="view" contentMode="scaleToFill" id="Jak-HC-Y50">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reversed String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5U4-92-Crs">
+                                <rect key="frame" x="138" y="332" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M6o-fx-CEQ">
+                                <rect key="frame" x="68" y="210" width="239" height="74"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jod-r5-rZi">
+                                <rect key="frame" x="176" y="181" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skS-up-Vkn">
+                                <rect key="frame" x="66" y="361" width="243" height="76"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="inputstringfield" destination="M6o-fx-CEQ" id="Y1z-V6-sxb"/>
+                        <outlet property="reversestringfield" destination="skS-up-Vkn" id="oA7-B9-Mms"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpi-aL-yjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VoN-l4-qcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-231.5" y="-567.5"/>
+            <point key="canvasLocation" x="-198.5" y="-371.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zn7-iY-y84">
@@ -192,10 +226,10 @@
             </objects>
             <point key="canvasLocation" x="246.5" y="1058.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Challengeone View Controller-->
         <scene sceneID="ch5-bZ-ZHX">
             <objects>
-                <viewController id="j5m-rb-OBK" sceneMemberID="viewController">
+                <viewController id="j5m-rb-OBK" customClass="challengeoneViewController" customModule="APIChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FsF-Tu-3rK"/>
                         <viewControllerLayoutGuide type="bottom" id="Trh-To-FdQ"/>
@@ -203,6 +237,32 @@
                     <view key="view" contentMode="scaleToFill" id="GOL-xP-Md1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K6v-26-Bdz">
+                                <rect key="frame" x="68" y="186" width="239" height="74"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2rr-pA-KFH">
+                                <rect key="frame" x="66" y="337" width="243" height="76"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reversed String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmX-KA-gfJ">
+                                <rect key="frame" x="138" y="308" width="123" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="String" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5k7-3i-P0e">
+                                <rect key="frame" x="176" y="157" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

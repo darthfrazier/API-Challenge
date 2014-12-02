@@ -505,6 +505,7 @@
 				7033E7261A2D0A1F00F4C685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7033E7271A2D0A1F00F4C685 /* Build configuration list for PBXNativeTarget "APIChallengeTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +514,7 @@
 				7033E7291A2D0A1F00F4C685 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
