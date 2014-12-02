@@ -2,7 +2,6 @@
 import java.io.*;
 import java.net.*;
 import org.json.*;
-import org.joda.*;
 import org.joda.time.DateTime;
 
 
@@ -20,6 +19,7 @@ public class challenges {
 		URLConnection connection = new URL(url).openConnection();
 		connection.setDoOutput(true);
 		connection.connect();
+		
 		output = new OutputStreamWriter(connection.getOutputStream());
 		output.write(json);
 		output.close();
@@ -181,7 +181,7 @@ public class challenges {
 		breader = Post(post.toString(), "http://challenge.code2040.org/api/register");
 		JSONObject results = new JSONObject(breader.readLine());
 		String token = results.getString("result");
-
+		System.out.println(token);
 		breader.close();
 		
 		Scanner user_input = new Scanner(System.in);
@@ -231,6 +231,7 @@ public class challenges {
 		}
 		
 		user_input.close();
+		System.out.println();
 		status(token);
 		return;
 		
