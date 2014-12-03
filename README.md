@@ -6,7 +6,7 @@ Java: java-json, JodaTime
 
 Python: requests
 
-I couldnt upload the dependencies, so you may have to download and include the dependencies if you want to run my programs locally.  The javascript is hosted at http://thedormproject.com/APIChallenge/.  I have a fourth implementation in swift, but its a bit more difficult and I as much as I like doing this, I have to actually school work.  I might get it done later.
+I couldnt upload the dependencies, so you may have to download and include the dependencies if you want to run my programs locally.  The javascript is hosted at http://thedormproject.com/APIChallenge/.  I have a fourth implementation in swift, but it's a bit more difficult and as much as I like doing this, I have to actually do school work.  I might get it done later, however.
 
 Thanks!
 
