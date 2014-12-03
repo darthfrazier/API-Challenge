@@ -7,6 +7,8 @@ I couldnt upload the dependencies, so you may have to download and include the d
 
 Thanks!
 
+Past Updates
+===========================
 Update 3:  I decided to try my hand at a swift version of the API Challenge. It is definately doable, and I got the registering and the first challenge done, but the register api stopped working and then I ran out of time.  It is not pretty and I only spent about 4 hours on it, but I do have a command over the swift programming language.  Testing was not possible after the api stopped working, so if you run the project, there is a 90% chance it wont work.  But if you check the console, you should see proper output.
 
 Also, since the register API doesnt work, my hosted site no longer works, so that might cause some issues. 
