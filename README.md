@@ -1,3 +1,34 @@
+Update 4: Everything is working again.  I have uploaded working java, javascript, and python implementations.  The have the following dependencies.
+
+Java: java-json, JodaTime
+Python: requests
+
+I couldnt upload the dependencies, so you may have to download and include the dependencies if you want to run my programs locally.  The javascript is hosted at http://thedormproject.com/APIChallenge/.  I have a fourth implementation in swift, but its a bit more difficult and I as much as I like doing this, I have to actually school work.  I might get it done later.
+
+Thanks!
+
+Update 3:  I decided to try my hand at a swift version of the API Challenge. It is definately doable, and I got the registering and the first challenge done, but the register api stopped working and then I ran out of time.  It is not pretty and I only spent about 4 hours on it, but I do have a command over the swift programming language.  Testing was not possible after the api stopped working, so if you run the project, there is a 90% chance it wont work.  But if you check the console, you should see proper output.
+
+Also, since the register API doesnt work, my hosted site no longer works, so that might cause some issues. 
+
+Update 2: I hosted the site on one of my other hosting accounts, so it works now.  If you want to check the results of each post, youll have to look at the javascript console.
+
+Update: Javascript implementation is done.  It could have been done more efficiently, but I think it was a good representation
+of my current javascript skills.  I have it hosted on google drive, but the connections are timing out, so Ill have to fix that.
+
+I have completed the Java implementation of the API challenge, and I will soon upload some html files that will contain the javascript implementation.
+I hope to also do it in python, but that will likely be after the december 1st due date.
+
+
+
+
+
+
+
+
+
+
+
 API-Challenge
 =============
 
@@ -141,18 +172,4 @@ http://challenge.code2040.org/api/status
 
 ============================================================================================================================
 
-I have completed the Java implementation of the API challenge, and I will soon upload some html files that will contain the javascript implementation.
-I hope to also do it in python, but that will likely be after the december 1st due date.
 
-Update: Javascript implementation is done.  It could have been done more efficiently, but I think it was a good representation
-of my current javascript skills.  I have it hosted on google drive, but the connections are timing out, so Ill have to fix that.
-
-Update 2: I hosted the site on one of my other hosting accounts, so it works now.  If you want to check the results of each post, youll have to look at the javascript console.
-
-Update 3:  I decided to try my hand at a swift version of the API Challenge. It is definately doable, and I got the registering and the first challenge done, but the register api stopped working and then I ran out of time.  It is not pretty and I only spent about 4 hours on it, but I do have a command over the swift programming language.  Testing was not possible after the api stopped working, so if you run the project, there is a 90% chance it wont work.  But if you check the console, you should see proper output.
-
-Also, since the register API doesnt work, my hosted site no longer works, so that might cause some issues. 
-
-http://thedormproject.com/APIChallenge/
-
-Thanks!
